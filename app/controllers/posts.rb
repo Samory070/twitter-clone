@@ -17,7 +17,7 @@ post '/posts' do
   @post = Post.new(body: params[:body])
   if @post.save
     puts "Post Saved"
-    redirect "/"
+    redirect "/posts"
   else
     puts "Post NOT saved"
     puts "#{@errors}"
