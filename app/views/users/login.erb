@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<head>
+    <title>Web Page Having A Form</title>
+    <style type="text/css">
+        body {
+            background-image: url("https://previews.123rf.com/images/alexeybykov/alexeybykov1308/alexeybykov130800064/21475926-Grey-background-Painted-iron-old-wall--Stock-Photo.jpg");
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color : #000000;
+            text-align : center;
+            font-family: "SIMPSON";
+        }
+        h3 {
+            color : #000000;
+            text-align : center;
+            font-family: "SIMPSON";
+        }
+        form {
+            width: 300px;
+            margin: 0 auto;
+        }
+        .buttonHolder {
+            text-align: center;
+            margin-left: 0cm;
+        }
+        .registration-login-choice
+        {
+            text-align: center;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <section class="errors">
+    <ul>
+      <% @user.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+
+    <h1>Hi <%= @user.name %>, good to see you!</h1>
+     <h3><a href="/">Home</a></h3>
+     <h3><a href="/">Logout</a></h3>
+
+</body>

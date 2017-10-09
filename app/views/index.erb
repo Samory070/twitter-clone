@@ -33,7 +33,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-    <h1>Welcome to Twitter clone</h1>
+    <h1>Welcome to Twitter clone!</h1>
         <div class="registration-login-choice">
           <form id="new-user-choice" method="GET" action="/">
             <button type="submit">Sign up</button>
@@ -44,7 +44,7 @@
           </form>
         </div>
 
-          <form id="signup-form" action="/" method="post">
+          <form id="signup-form" action="/users/signup" method="post">
                <table>
                 <tr>
                  <td><b>Name:</b> </td> <td><input type="text" name="name"></td>
@@ -65,7 +65,7 @@
                </div>
           </form>
 
-          <form id="login-form" action="/" method="post">
+          <form id="login-form" action="/users/login" method="post">
                <table>
                 <tr>
                  <td><b>Username: </b></td> <td><input type="text" name="username"></td>
