@@ -20,22 +20,22 @@ post '/tweets' do
   end
 end
 
-# get 'tweets/:id/edit' do
-#   @tweet = Tweet.find_by(id: params[:id])
-#   redirect "/" unless own_tweet?(@tweet)
-#   erb :'tweets/edit'
-# end
+get '/tweets/:id/edit' do
+  @tweet = Tweet.find_by(id: params[:id])
+  redirect "/" unless own_tweet?(@tweet)
+  erb :'tweets/edit'
+end
 
-# put "/tweets/:id" do
-# # Do I need to declare @current_user in order for this to work properly?
-#   current_user
-#   @tweet = Tweet.find_by(id: params[:id])
-#   redirect '/' unless @tweet/user == current_user
-#   # Does this params work? Look into exact call
-#   @tweet.assign_attributes(params[:tweet])
-#   if @tweet.save
-#     redirect "/"
-#   else
-#     "FIgure out what when wrong!"
-#   end
-# end
+put "/tweets/:id" do
+  current_user
+  @tweet = Tweet.find_by(id: params[:id])
+  redirect '/' unless @tweet.user == current_user
+  # Does this params work? Look into exact call
+  @tweet.assign_attributes(params[:post])
+  if @tweet.save
+    redirect "/"
+  else
+    @errors = @tweet.errors.full_messages
+    erb :'tweets/edit'
+  end
+end
