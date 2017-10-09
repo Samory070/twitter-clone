@@ -4,4 +4,21 @@ $(document).ready(function() {
   // when we try to bind to them
 
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+  $("#signup-form").hide();
+  $("#login-form").hide();
+
+  $("#new-user-choice").on("submit", function(event) {
+    event.preventDefault();
+    $(".registration-login-choice").hide()
+    $("#login-form").hide();
+    $("#signup-form").show();
+    });
+
+  $("#login-user-choice").on("submit", function(event) {
+    event.preventDefault();
+    $(".registration-login-choice").hide()
+    $("#signup-form").hide();
+    $("#login-form").show();
+    });
+
 });

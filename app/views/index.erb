@@ -1,23 +1,86 @@
-<div class="container">
-  <h1>Welcome to Sinatra!</h1>
-  <p>Hello, world!</p>
+<!DOCTYPE HTML>
+<head>
+    <title>Web Page Having A Form</title>
+    <style type="text/css">
+        body {
+            background-image: url("https://previews.123rf.com/images/alexeybykov/alexeybykov1308/alexeybykov130800064/21475926-Grey-background-Painted-iron-old-wall--Stock-Photo.jpg");
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color : #000000;
+            text-align : center;
+            font-family: "SIMPSON";
+        }
+        h3 {
+            color : #000000;
+            text-align : center;
+            font-family: "SIMPSON";
+        }
+        form {
+            width: 300px;
+            margin: 0 auto;
+        }
+        .buttonHolder {
+            text-align: center;
+            margin-left: 0cm;
+        }
+        .registration-login-choice
+        {
+            text-align: center;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Welcome to Twitter clone</h1>
+        <div class="registration-login-choice">
+          <form id="new-user-choice" method="GET" action="/">
+            <button type="submit">Sign up</button>
+          </form>
+                <br>
+          <form id="login-user-choice" method="GET" action="/">
+            <button type="submit">Sign in</button>
+          </form>
+        </div>
 
-  <table>
-    <tr>
-      <th>File Description</th>
-      <th>File Location</th>
-    </tr>
-    <tr>
-      <td>This view file</td>
-      <td><code><%= __FILE__.gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The layout file</td>
-      <td><code><%= File.expand_path('../layout.erb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The current controller</td>
-      <td><code><%= File.expand_path('../../controllers/index.rb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-  </table>
-</div>
+          <form id="signup-form" action="/" method="post">
+               <table>
+                <tr>
+                 <td><b>Name:</b> </td> <td><input type="text" name="name"></td>
+                </tr>
+                <tr>
+                 <td><b>Username:</b> </td> <td><input type="text" name="username"></td>
+                </tr>
+                <tr>
+                 <td><b>Email:</b> </td> <td><input type="email" name="email"></td>
+                </tr>
+                <tr>
+                 <td><b>Password:</b> </td> <td><input type="password" name="password"></td>
+                </tr>
+               </table>
+               <!-- <br> -->
+               <div class="buttonHolder">
+                        <input type="submit" value="Sign up">
+               </div>
+          </form>
+
+          <form id="login-form" action="/" method="post">
+               <table>
+                <tr>
+                 <td><b>Username: </b></td> <td><input type="text" name="username"></td>
+                </tr>
+                <tr>
+                 <td><b>Password: </b></td> <td><input type="password" name="password"></td>
+                </tr>
+               </table>
+           <br>
+           <div class="buttonHolder">
+                    <input type="submit" value="Sign in">
+           </div>
+          </form>
+
+     <h3><a href="/">Home</a></h3>
+
+
+</body>
