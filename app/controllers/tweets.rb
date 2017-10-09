@@ -18,3 +18,7 @@ delete '/tweets' do
   @tweet.destroy!
   redirect "/users/#{current_user.id}"
 end
+
+#put '/tweets' do
+#  @tweet = Tweet.find_by(user_id: current_user.id)
+#end
