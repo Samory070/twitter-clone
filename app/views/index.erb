@@ -19,8 +19,5 @@
   <% @tweets.each do |tweet| %>
     <p><%= tweet.body %> </p>
     <p><%= tweet.user.username %> </p>
-      <% if owns_tweet?(tweet) %>
-        <h4><a href="tweets/<%= post.id %>/edit"> Edit</a> or Delete </h4>
-        <% end %>
   <% end %>
 </div>
