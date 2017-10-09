@@ -1,0 +1,13 @@
+<div id='registered_user'>
+  <% if logged_in? %>
+      <div id='registered_user'>
+        <a href='/user/<%= user.id %>'>@<%= user.username %></a><br>
+
+
+        Registered Users:
+        <a href='/user/<%= user.id %>/follows'> <%= user.all.each %></a><br>
+        <a href='/user/<%= user.id %>/followers'>Followers: <%= user.followees.count %></a><br>
+      </div>
+  <% else %>
+  <% end %>
+</div>

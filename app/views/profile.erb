@@ -1,0 +1,31 @@
+@<%= user.username %><br><br>
+
+<div id='profile'>
+  <% if logged_in? %>
+      <div id='profile'>
+        <a href='/user/<%= user.id %>'>@<%= user.username %></a><br>
+
+  <br><br>
+        Tweets: <span id='tweet-count'><%= user.tweets.count %></span><br>
+        <a href='/user/<%= user.id %>/follows'>Follows: <%= user.follows.count %></a><br>
+        <a href='/user/<%= user.id %>/followers'>Followers: <%= user.followees.count %></a><br>
+      </div>
+  <% else %>
+  <% end %>
+</div>
+
+Tweets:
+
+<ul id='tweet-list'>
+  <% user.tweets.each do |tweet| %>
+    <%= erb :'tweet'%>
+  <% end %>
+</ul>
+
+Registered users:
+<ul id='registered_user'>
+  <br><h3>
+  <a href='/registered_user'>Registered users</a>
+  </h3></br>
+</ul>
+

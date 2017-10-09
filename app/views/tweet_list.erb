@@ -1,0 +1,7 @@
+<%= erb :'tweet' %>
+<%= display_error %>
+<ul id='tweet-list'>
+  <% tweets.each do |tweet| %>
+      <%= erb :'tweet' %>
+  <% end %>
+</ul>
