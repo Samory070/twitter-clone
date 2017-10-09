@@ -5,6 +5,7 @@
 
 <nav>
   <% if logged_in? %>
+    <h3> Current User </h3>
     <%= @current_user.username %> <br><br>
     <!-- Create a tweet here -->
 <!--     <a href="/users/potlucks/new"> Host a Potluck!</a><br> -->
@@ -14,3 +15,10 @@
     <a href='/users/new'> Register!</a>
   <% end %>
 </nav>
+
+<div name="container">
+  <% @tweets.each do |tweet| %>
+    <p><%= tweet.body %> </p>
+    <p><%= tweet.user.username %> </p>
+  <% end %>
+</div>

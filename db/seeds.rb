@@ -5,17 +5,17 @@ User.delete_all
 thomas = User.create!(email: "thomas@t.com",
             full_name: "Thomas Raff",
             username: "thomas",
-            hash_password: "1234" )
+            password: "1234" )
 
 tt = User.create!(email: "t@t.com",
             full_name: "T Raff",
             username: "t",
-            hash_password: "1234" )
+            password: "1234" )
 
 tr = User.create!(email: "tr@t.com",
             full_name: "T Raff",
             username: "tr",
-            hash_password: "1234" )
+            password: "1234" )
 
 Tweet.create!(body: "Test Tweet 1 - created by thomas",
               user: thomas)

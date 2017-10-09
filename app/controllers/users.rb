@@ -1,11 +1,12 @@
+#Condused why this route needs to be before "/user/:id" for this to catch?
+get '/users/new' do
+  erb :'users/new'
+end
+
 get '/users/:id' do
   current_user
   redirect '/' unless authorized?(current_user)
   erb :'users/show'
-end
-
-get '/users/new' do
-  erb :'users/new'
 end
 
 post '/users' do
