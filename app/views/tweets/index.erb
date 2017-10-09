@@ -1,0 +1,16 @@
+<style>
+  form { display: inline; }
+</style>
+
+<h1>Newsfeed</h1>
+<h4>See the latest tweets below:</h4>
+<div class="tweets">
+  <ul>
+  <% @tweets.each do |tweet| %>
+    <li>
+      <%= "'#{tweet.post}'" " - " "#{tweet.user.username}" %> <a href="/tweets/<%= tweet.id %>">Show</a>
+      <%= erb :'tweets/_delete', layout: false, locals: { tweet: tweet } %>
+    </li>
+  <% end %>
+  </ul>
+</div>

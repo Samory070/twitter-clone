@@ -7,7 +7,7 @@ post '/sessions' do
   user = User.authenticate(params[:user][:username], params[:user][:password])
   if user
     session[:user_id] = user.id
-    redirect '/'
+    redirect "/users/#{user.id}"
   else
     status 422
     @errors = ["I pity the fool who can't access their account!"]

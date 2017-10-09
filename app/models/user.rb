@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   validates :full_name, :username, :email, :password, presence: true
   validates :username, :email, uniqueness: true
 
+  has_many :tweets
+  has_many :follows
 
   def password
     @password ||= Password.new(password_hash)

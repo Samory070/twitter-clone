@@ -1,0 +1,7 @@
+<% if current_user %>
+  <h1 id="user-profile"><%= current_user.username %>'s Profile</h1>
+
+  <form id="new-tweet" method="post" action="/tweets">
+    <input type="text" id="tweet_text" name="tweet_text" placeholder="Tweet here">
+    <input type="submit" value="Tweet">
+  </form>

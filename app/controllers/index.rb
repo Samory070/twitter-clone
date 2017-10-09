@@ -1,4 +1,4 @@
 get '/' do
-  # Look in app/views/index.erb
-  erb :index
+  @tweets = Tweet.all
+  erb :'tweets/index'
 end
