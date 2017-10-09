@@ -2,7 +2,12 @@ class User < ApplicationRecord
   validates :first_name, :last_name, :username, :email, :password_hash, presence: true
   validates :username, :email, uniqueness: true
 
-  has_many :posts
+  # OLD
+  # has_many :posts
+
+  # New
+  has_many :tweets
+  has_many :posts, :through => :tweets
 
   def password
     @password ||=BCrypt::Password.new(password_hash)
