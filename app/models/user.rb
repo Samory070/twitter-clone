@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  validates :first_name, :last_name, :username, :email, :password, presence: true
+  validates :first_name, :last_name, :username, :email, :password_hash, presence: true
   validates :username, :email, uniqueness: true
 
   def password
