@@ -1,0 +1,11 @@
+<div class="container">
+
+  <center><h1>Twitter Clone</h1></center>
+  <h4><a href="/users/current_user.id">Profile</a></h4>
+
+  <h3>Users:</h3>
+  <% User.all.each do |user| %>
+    <p><%= user.username %></p>
+  <% end%>
+
+</div>

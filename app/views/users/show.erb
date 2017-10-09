@@ -6,9 +6,10 @@
   <center><h2><%= current_user.first_name %>'s Profile</h2>
   <h4>Tweets: <%= current_user.tweets.length %>
   Followers: <%= current_user.followers.length %>
-  Following: <%= current_user.followed_users.length %></h4></center>
+  Following: <%= current_user.followed_users.length %></h4>
 
   <a href="/tweets/new">Create a tweet!</a>
+  <a href="/users/index">Users</a></center>
 
   <h3>Tweets:</h3>
   <% current_user.tweets.each do |tweet| %>

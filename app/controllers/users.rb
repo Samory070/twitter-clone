@@ -28,6 +28,12 @@ post '/login' do
   end
 end
 
+#display all users
+get '/users/index' do
+  @users = User.all
+  erb :'users/index'
+end
+
 #logout
 get '/users/logout' do
   session.clear
