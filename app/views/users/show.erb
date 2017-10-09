@@ -1,0 +1,31 @@
+<p id="logout"><a href="/logout">Logout</a></p>
+
+<h1>Welcome, <%=@user.first_name%></h1>
+
+<p><a href="/tweets/new">Create a new tweet here</a></p>
+<p><a href="/users">See all users</a></p>
+
+<h2>My Followers:</h2>
+<%@user.followers.each do |follower| %>
+  <ul>
+    <li>Username: <%=follower.username%></li>
+  </ul>
+  <%end%>
+
+<h2>Following:</h2>
+<%@user.followees.each do |followee| %>
+  <ul>
+    <li>Username: <%=followee.username%></li>
+  </ul>
+<% end %>
+
+<h2>All of My Tweets:</h2>
+<p>Total number of tweets: <%=@tweets.count%></p>
+  <%@tweets.each do |tweet| %>
+    <ul>
+      <li><a href="<%="/tweets/#{tweet.id}"%>"><%=tweet.text%></a></li>
+      <li>Posted: <%=tweet.created_at%></li>
+    </ul>
+<% end %>
+
+

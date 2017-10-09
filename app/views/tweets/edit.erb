@@ -1,0 +1,9 @@
+<div>
+<h2>Edit Tweet</h2>
+<form action="/tweets/<%=@tweet.id%>" method="post">
+<input type="hidden" name="_method" value="put">
+  <label for="text">Text:</label>
+  <input type="text" name="tweet[text]" id="text" value="<%= @tweet.try(:text)%>">
+  <input type="submit" value="Submit">
+</form>
+</div>

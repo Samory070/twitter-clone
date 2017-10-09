@@ -1,0 +1,10 @@
+<h1>New Tweet</h1>
+<form action="/tweets" method="post">
+  <label for="text">Text (max. of 140 characters):</label>
+  <input type="text" name="tweet[text]">
+  <button type="submit">Submit</button>
+</form>
+
+<%if @error %>
+  <%= @error %>
+<%end%>

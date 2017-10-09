@@ -1,0 +1,15 @@
+<h1>All Users:</h1>
+<%@users.each do |user|%>
+  <ul>
+    <li>Name: <%=user.first_name%> <%=user.last_name%></li>
+    <li>Username: <%=user.username%></li>
+    <li>Email: <%=user.email%></li>
+    <li><a href="<%="/users/#{user.id}"%>">Profile</a></li>
+
+    <form action="/users/<%=user.id%>/followers/new" method="post">
+      <input type="hidden" name="_method">
+      <input type="submit" value="Follow">
+    </form>
+  </ul>
+
+  <%end%>

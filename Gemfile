@@ -11,10 +11,10 @@ gem 'sinatra-contrib'
 
 # Use Thin for our web server
 gem 'thin'
-
+gem 'bcrypt'
 gem 'activerecord', '~> 5.0'
 gem 'activesupport', '~> 5.0'
-
+gem 'pry'
 gem 'rake', '~> 12.0.0'
 
 gem 'shotgun'

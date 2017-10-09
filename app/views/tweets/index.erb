@@ -1,0 +1,10 @@
+<h1>Your Tweets:</h1>
+<%@tweets.each do |tweet| %>
+<ul>
+  <li><%=tweet.text%></li>
+  <li><%=tweet.created_at%></li>
+</ul>
+<%end%>
+
+<p><a href="<%="/users/#{@user.id}"%>">Back</a></p>
+

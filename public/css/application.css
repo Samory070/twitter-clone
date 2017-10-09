@@ -7,3 +7,22 @@
 th {
   text-align: left;
 }
+
+h1 {
+  color: Purple;
+}
+
+h1, h2, h3, p, div, form {
+  padding: 10px;
+  margin: 10px;
+  font-family: Times New Roman;
+}
+
+#logout {
+  display: inline-block;
+  float: right;
+}
+
+body {
+  font-family: Times New Roman;
+}
