@@ -4,6 +4,5 @@ get '/followers/new' do
 end
 
 post '/followers' do
-  @followed = Follow.new(follower_id: current_user.id, follower_id: params[:user_id])
-    redirect "/users/current_user.id"
+  @user = User.find(params[:relationship][:followed_id])
 end

@@ -12,3 +12,9 @@ post '/tweets' do
     erb :"/tweets/new"
   end
 end
+
+delete '/tweets' do
+  @tweet = Tweet.find_by(user_id: current_user.id)
+  @tweet.destroy!
+  redirect "/users/#{current_user.id}"
+end

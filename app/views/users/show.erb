@@ -15,9 +15,13 @@
   <% @tweets.each do |tweet| %>
     <p><%= tweet.content %>
     - <%= tweet.user.username %>
-    </p>
-
+    <% if tweet[:user_id] == current_user.id %> </p>
+    <form action="/tweets" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" class="button" value="delete">
+    <% end %>
   <% end%>
+
 
   <br>
   <br>
