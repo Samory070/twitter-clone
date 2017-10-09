@@ -12,7 +12,7 @@
   <a href="/users/index">Users</a></center>
 
   <h3>Tweets:</h3>
-  <% current_user.tweets.each do |tweet| %>
+  <% @tweets.each do |tweet| %>
     <p><%= tweet.content %></p>
   <% end%>
 

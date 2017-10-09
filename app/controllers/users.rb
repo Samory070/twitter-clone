@@ -43,6 +43,7 @@ end
 #last item
 get '/users/:id' do
   @user = User.find_by(id: params[:id])
+  @tweets = Tweet.all.order('updated_at DESC')
   redirect '/' unless current_user.id == session[:user_id]
   erb :'users/show'
 end
