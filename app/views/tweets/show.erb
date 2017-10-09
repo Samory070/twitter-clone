@@ -1,0 +1,10 @@
+<h1> Tweet </h1>
+<% if session[:user_id] %>
+  <a href="/sessions/logout">Logout</a>
+<% end %>
+<ul>
+  <li>id: <%= @tweet.id %></li>
+  <li>Tweet: <%= @tweet.tweet_text %></li>
+  <li>Created At: <%= @tweet.created_at %></li>
+  <li>Updated At: <%= @tweet.updated_at %></li>
+</ul>

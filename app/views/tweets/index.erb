@@ -1,0 +1,19 @@
+<% if logged_in? %>
+  <a href="tweets/new">Create a New Tweet</a>
+<% end %>
+  <h1>Tweets:</h1>
+<% @tweet.each do |tweet| %>
+  <h2>Message: <%= tweet.tweet_text %></h2>
+  <h2>Created by user: <%= tweet.user_id %></h2>
+  <a href="tweets/<%= tweet.id %>">More Information</a>
+  <% if owns_tweet?(tweet) %>
+    <h3><a href="/tweets/<%= tweet.id %>/edit">Edit</a> or
+      <%= erb :'/tweets/_delete', layout: false, locals: { tweet: tweet} %></h3>
+  <% end %>
+<% end %>
+<br>
+<br>
+<br>
+<% if session[:user_id] %>
+  <a href="/sessions/logout">Logout</a>
+<% end %>
