@@ -2,6 +2,9 @@ get '/posts' do
   # "Shows all posts"
   @posts = Post.all
   @posts.map{|tweet| tweet.tweet}.to_s
+
+  erb :'posts/index'
+
 end
 
 
@@ -15,19 +18,13 @@ post '/posts' do
   # "create a new post"
   # puts "create a new post"
   # puts "#{params[:post]}"
-  @post = Post.new(params[:post])
-
-  if @post.save
-    puts "new post saved"
-      redirect "/posts"
-  else
-    puts "new post not saved"
-    erb :'posts/new'
-  end
+  "creates post action"
 end
 
 get '/posts/:id' do
-  "display a specific post"
+  @post = Post.find(params[:id])
+  # @post.id
+  erb :'posts/show'
 end
 
 get '/posts/:id/edit' do
