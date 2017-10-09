@@ -1,10 +1,10 @@
 <h1> Welcome to Thomas's Fake Twitter! </h1>
 
-
 <nav>
   <% if logged_in? %>
-    <h3> Current User </h3>
-    <%= @current_user.username %> <br><br>
+    <h3> Current User: <a href="/users/<%= @current_user.id %>"> <%= @current_user.username %> </a>
+    <h4> Followers: <%= @current_user.followers.length %><br>
+    <h4> Following: <%= @current_user.followees.length %><br><br>
     <a href="/tweets/new"> New Tweet</a><br>
     <a href="/sessions/logout"> Log Out</a>
   <% else %>

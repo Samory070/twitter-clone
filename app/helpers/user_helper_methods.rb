@@ -14,8 +14,8 @@ def own_tweet?(tweet)
   logged_in? && tweet.user == current_user
 end
 
-def other_user_tweet?(other_user)
-  tweet.user == other_user
+def user_tweet?(tweet, user)
+  tweet.user == user
 end
 
 

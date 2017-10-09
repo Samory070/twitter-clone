@@ -1,7 +1,7 @@
 
 get"/users/:id" do
   @tweets = Tweet.all
-  @other_user = User.find_by(id: params[:id])
+  @user = User.find_by(id: params[:id])
   erb :"users/show"
 end
 

@@ -1,8 +1,10 @@
-<h1> <%=@other_user.username %>  </h1>
+<h1> <%=@user.username %>  </h1>
+<h4> Followers: <%= @user.followers.length %><br>
+<h4> Following: <%= @user.followees.length %><br><br>
 
 <div name="container">
   <% @tweets.each do |tweet| %>
-    <% if other_user_tweet?(@other_user) %>
+    <% if user_tweet?(tweet, @user) %>
       <p><%= tweet.body %> </p>
     <% end %>
   <% end %>
