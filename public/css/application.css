@@ -26,3 +26,11 @@ h1, h2, h3, p, div, form {
 body {
   font-family: Times New Roman;
 }
+
+h2, h3 {
+  color: DarkBlue;
+}
+
+#follow-button {
+  color: pink;
+}

@@ -6,7 +6,7 @@
     <li>Email: <%=user.email%></li>
     <li><a href="<%="/users/#{user.id}"%>">Profile</a></li>
 
-    <form action="/users/<%=user.id%>/followees/new" method="post">
+    <form action="/users/<%=user.id%>/followees/new" method="post" id="follow-button">
       <input type="hidden" name="_method">
       <input type="submit" value="Follow">
     </form>

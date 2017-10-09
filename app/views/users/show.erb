@@ -8,14 +8,15 @@
 <h2>My Followers:</h2>
 <%@user.followers.each do |follower| %>
   <ul>
-    <li>Username: <%=follower.username%></li>
+    <li>Username: <a href="<%="/users/#{@user.id}"%>"><%=follower.username%></a></li>
   </ul>
   <%end%>
+
 
 <h2>Following:</h2>
 <%@user.followees.each do |followee| %>
   <ul>
-    <li>Username: <%=followee.username%></li>
+    <li>Username: <a href="<%="/users/#{@user.id}"%>"><%=followee.username%></a></li>
   </ul>
 <% end %>
 
