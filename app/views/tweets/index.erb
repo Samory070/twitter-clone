@@ -42,10 +42,13 @@
         </ul>
     </section>
 
-    <h1>Hi <%= @user.name %>, good to see you!</h1>
-     <h3><a href="/">Home</a></h3>
-     <h3><a href='#'>Your Dashboard</a></h3>
-     <h3><a href='/tweets/index'>The Tweets!</a></h3>
-     <h3><a href="/">Logout</a></h3>
+    <div class="tweets">
+        <ul>
+          <% @tweets.each do |tweet| %>
+            <li><%= tweet.content %></li>
+          <% end %>
+        </ul>
+    </div>
+
 
 </body>
