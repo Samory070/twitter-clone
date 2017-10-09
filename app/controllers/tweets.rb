@@ -30,7 +30,6 @@ put "/tweets/:id" do
   current_user
   @tweet = Tweet.find_by(id: params[:id])
   redirect '/' unless @tweet.user == current_user
-  # Does this params work? Look into exact call
   @tweet.assign_attributes(params[:post])
   if @tweet.save
     redirect "/"
@@ -39,3 +38,12 @@ put "/tweets/:id" do
     erb :'tweets/edit'
   end
 end
+
+delete "/tweets/:id" do
+  current_user
+  @tweet = Tweet.find_by(id: params[:id])
+  redirect '/' unless @tweet.user == current_user
+  @tweet.destroy!
+  redirect "/"
+end
+

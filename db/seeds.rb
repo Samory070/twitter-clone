@@ -7,12 +7,12 @@ thomas = User.create!(email: "thomas@t.com",
             username: "thomas",
             password: "1234" )
 
-tt = User.create!(email: "t@t.com",
-            full_name: "T Raff",
-            username: "t",
+tt = User.create!(email: "steve@t.com",
+            full_name: "Steve Oh",
+            username: "steve",
             password: "1234" )
 
-tr = User.create!(email: "tr@t.com",
+tr = User.create!(email: "traff@t.com",
             full_name: "T Raff",
             username: "tr",
             password: "1234" )

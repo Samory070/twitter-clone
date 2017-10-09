@@ -20,7 +20,8 @@
     <p><%= tweet.body %> </p>
     <p>Posted By: <%= tweet.user.username %> </p>
       <% if own_tweet?(tweet) %>
-        <h4><a href="tweets/<%= tweet.id %>/edit"> Edit</a> or Delete </h4>
+        <h4><a href="tweets/<%= tweet.id %>/edit"> Edit</a></h4>
+        <%= erb :"tweets/_delete", layout:false, locals: {tweet: tweet} %>
         <% end %>
   <% end %>
 </div>
