@@ -1,8 +1,7 @@
 get '/posts' do
   # "Shows all posts"
   @posts = Post.all
-  @posts.map{|tweet| tweet.tweet}.to_s
-
+  # @posts.map{|tweet| tweet.tweet}.to_s
   erb :'posts/index'
 
 end
@@ -23,7 +22,6 @@ end
 
 get '/posts/:id' do
   @posts = Post.find(params[:id])
-  @posts.id
   erb :'posts/show'
 end
 
