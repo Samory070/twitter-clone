@@ -9,7 +9,7 @@ post '/users/signup' do
   if @user.save
     erb :'/users/new'
   else
-    "do something"
+    "Cannot sign up"
   end
 end
 
@@ -27,7 +27,7 @@ post '/users/login' do
     session[:user_id] = @user.id
     erb :'users/login'
   else
-    "Cannot login"
+    "Cannot log in"
   end
 end
 
