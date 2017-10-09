@@ -19,6 +19,6 @@ delete '/tweets' do
   redirect "/users/#{current_user.id}"
 end
 
-#put '/tweets' do
-#  @tweet = Tweet.find_by(user_id: current_user.id)
+#get '/tweets/:id/edit' do
+#  @tweet = Tweet.find_by(params[:id])
 #end

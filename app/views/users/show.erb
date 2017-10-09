@@ -16,12 +16,14 @@
     <p><%= tweet.content %>
     - <%= tweet.user.username %>
     <% if tweet[:user_id] == current_user.id %> </p>
+    <!-- deleting a tweet -->
     <form action="/tweets" method="post">
     <input type="hidden" name="_method" value="delete">
     <input type="submit" class="button" value="delete">
+    <!-- updating a tweet
     <form action="/tweets" method="post">
     <input type="hidden" name="_method" value="put">
-    <input type="submit" class="button" value="update">
+    <input type="submit" class="button" value="update"> -->
     <% end %>
   <% end%>
 
