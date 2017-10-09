@@ -34,17 +34,9 @@
 </head>
 <body>
 
-    <section class="errors">
-        <ul>
-          <% @user.errors.full_messages.each do |error| %>
-            <li><%= error %></li>
-          <% end %>
-        </ul>
-    </section>
-
     <h1>Hi <%= @user.name %>, good to see you!</h1>
      <h3><a href="/">Home</a></h3>
-     <h3><a href='#'>Your Dashboard</a></h3>
+     <h3><a href='users/:id'>Your Dashboard</a></h3>
      <h3><a href='/tweets/index'>The Tweets!</a></h3>
      <h3><a href="/">Logout</a></h3>
 

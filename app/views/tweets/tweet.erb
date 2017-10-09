@@ -34,11 +34,16 @@
 </head>
 
 <body>
+
+    <h3><a href="/">Home</a></h3>
+    <h3><a href='#'>Your Dashboard</a></h3>
+    <h3><a href="/users/logout">Logout</a></h3>
+
     <div class="tweets">
-        <ul>
-          <% @tweets.each do |tweet| %>
-            <li><%= tweet.content %></li>
+        <ol>
+          <% @tweets.each_with_index do |tweet, index| %>
+            <li>Tweet #<%= index %> <%= tweet.content %></li>
           <% end %>
-        </ul>
+        </ol>
     </div>
 </body>

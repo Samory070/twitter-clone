@@ -17,10 +17,7 @@
             text-align : center;
             font-family: "SIMPSON";
         }
-        form {
-            width: 300px;
-            margin: 0 auto;
-        }
+
         .buttonHolder {
             text-align: center;
             margin-left: 0cm;
@@ -29,15 +26,34 @@
         {
             text-align: center;
         }
+
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body>
+
+    <h3><a href="/">Home</a></h3>
+    <!-- Not correct -->
+    <h3><a href="/">Your Dashboard</a></h3>
+    <h3><a id="create-tweet" href="/tweets/index">Tweet something!</a></h3>
+    <h3><a href="/users/logout">Logout</a></h3>
+
+
     <div class="tweets">
-        <ul>
-          <% @tweets.each do |tweet| %>
-            <li><%= tweet.content %></li>
+        <ul id="list-of-tweets">
+          <% @tweets.reverse.each_with_index do |tweet, index| %>
+          <li><b> Tweet #<%= index %> </b> | <b> User: </b> <%= tweet.user.username %> | <b> Created at: </b> <%= tweet.created_at %> </b> <br>
+              <%= tweet.content %></li> <br>
+              <!-- Not working, just displaying -->
+              <h5>Leave a Comment:</h5>
+              <form id="form-comment" role="form">
+                <div class="form-group">
+                  <textarea class="form-control" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-success">Submit</button>
+              </form>
+              <br>
           <% end %>
         </ul>
     </div>

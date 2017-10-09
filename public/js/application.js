@@ -6,6 +6,7 @@ $(document).ready(function() {
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
   $("#signup-form").hide();
   $("#login-form").hide();
+  //$("#create-new-tweet").hide();
 
   $("#new-user-choice").on("submit", function(event) {
     event.preventDefault();
@@ -20,5 +21,10 @@ $(document).ready(function() {
     $("#signup-form").hide();
     $("#login-form").show();
     });
+
+  // $("#create-tweet").on("click", function(event)) {
+  //   event.preventDefault();
+  //   $("#create-new-tweet").show();
+  // }
 
 });
