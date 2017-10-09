@@ -3,10 +3,10 @@
   <center><h1>Twitter Clone</h1></center>
 
   <br>
-  <center><h2><%= current_user.first_name %>'s Profile</h2>
+  <center><h2><%= current_user.username %>'s Profile</h2>
   <h4>Tweets: <%= current_user.tweets.length %> |
-  Followers: <%= current_user.followers.length %> |
-  Following: <%= current_user.followed_users.length %></h4>
+  Followers: <%= current_user.followees.length %> |
+  Following: <%= current_user.followings.length %></h4></center>
 
   <a href="/tweets/new">Create a tweet!</a>
   <a href="/users/index">Users</a></center>

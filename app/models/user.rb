@@ -9,8 +9,12 @@ class User < ApplicationRecord
   validates :password, presence: true
 
   has_many :tweets
-  has_many :followers, foreign_key: "follower_id"
-  has_many :followed_users, through: :followers, source: :followed
+  #people that I am following
+  has_many :follows, foreign_key: :follower_id
+  has_many :followings, through: :follows, source: :follower
+  #people that are following me
+  has_many :follows, foreign_key: :followed_id
+  has_many :followees, through: :follows, source: :followed
 
 #creating a user password
     def password
