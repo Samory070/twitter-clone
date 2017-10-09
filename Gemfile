@@ -18,6 +18,9 @@ gem 'activesupport', '~> 5.0'
 gem 'rake', '~> 12.0.0'
 
 gem 'shotgun'
+gem 'pry'
+gem 'pry-byebug'
+gem 'bcrypt'
 
 group :test do
   gem 'faker', '~> 1.7.3'
