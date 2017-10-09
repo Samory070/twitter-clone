@@ -9,7 +9,7 @@ helpers do
   end
 
   def require_user
-    redirect 'user/new' unless logged_in?
+    redirect 'users/new' unless logged_in?
   end
 
 end

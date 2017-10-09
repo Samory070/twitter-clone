@@ -34,9 +34,11 @@
           <li class="nav-item">
             <a class="nav-link" href="/users/new">Register</a>
           </li>
+          <% if current_user %>
           <li class="nav-item">
-            <a class="nav-link disabled" href="#">Your Content</a>
+            <a class="nav-link disabled" method ="get" href="/users/<%= current_user.id %>">Your page</a>
           </li>
+          <% end %>
         </ul>
         <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
