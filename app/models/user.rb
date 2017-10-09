@@ -13,6 +13,7 @@ class User < ApplicationRecord
   has_many :follows, foreign_key: :follower_id
   has_many :followings, through: :follows, source: :follower
   #people that are following me
+  # **HAVE TO CHANGE SAME NAME TO AVOID OVERWRITE**
   has_many :follows, foreign_key: :followed_id
   has_many :followees, through: :follows, source: :followed
 
