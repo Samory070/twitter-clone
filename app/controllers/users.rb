@@ -27,3 +27,16 @@ post '/login' do
     erb :'users/login'
   end
 end
+
+#logout
+get '/users/logout' do
+  session.clear
+  redirect "/"
+end
+
+#last item
+get '/users/:id' do
+  @user = User.find_by(id: params[:id])
+  redirect '/' unless current_user.id == session[:user_id]
+  erb :'users/show'
+end
