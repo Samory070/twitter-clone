@@ -1,23 +1,19 @@
-<div class="container">
-  <h1>Welcome to Sinatra!</h1>
-  <p>Hello, world!</p>
 
-  <table>
-    <tr>
-      <th>File Description</th>
-      <th>File Location</th>
-    </tr>
-    <tr>
-      <td>This view file</td>
-      <td><code><%= __FILE__.gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The layout file</td>
-      <td><code><%= File.expand_path('../layout.erb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The current controller</td>
-      <td><code><%= File.expand_path('../../controllers/index.rb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-  </table>
-</div>
+<h1>All the users</h1>
+<a href="/users/new">Sign Up</a>
+<a href="/sessions/new">Sign In</a>
+
+<ul>
+  <% @users.each do |user| %>
+  <li><%= user.username %>
+    <a href="/users/<%= user.id %>">Profile Page</a>
+    <a href="/users/<%= user.id%>/edit"></a>
+    <form action="/users/<%= user.id %>" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" value="delete">
+    </form>
+  </li>
+  <% end %>
+</ul>
+
+
