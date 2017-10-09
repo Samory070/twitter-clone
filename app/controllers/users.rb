@@ -1,4 +1,10 @@
-#Condused why this route needs to be before "/user/:id" for this to catch?
+
+get"/users/:id" do
+  @tweets = Tweet.all
+  @other_user = User.find_by(id: params[:id])
+  erb :"users/show"
+end
+
 get '/users/new' do
   erb :'users/new'
 end

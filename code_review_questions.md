@@ -1,5 +1,8 @@
 Code Review Questions
 
+*Could not get delete to work like it did in the video, using this approach
+        <%= erb :"tweets/_delete", layout:false, locals: {tweet: tweet} %>
+
 *Need to spend some time understanding scope in CRUD and when I need to use my helper methods in order to make sure things are securely in scope
 
 *"/users/show"  maybe a different table name, look into schema when time     <!-- Could not get created at to work, inquire??? -->

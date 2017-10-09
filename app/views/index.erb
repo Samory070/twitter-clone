@@ -1,7 +1,5 @@
 <h1> Welcome to Thomas's Fake Twitter! </h1>
 
-<!-- Better way to get this information into scope? -->
-<% current_user %>
 
 <nav>
   <% if logged_in? %>
@@ -18,10 +16,11 @@
 <div name="container">
   <% @tweets.each do |tweet| %>
     <p><%= tweet.body %> </p>
-    <p>Posted By: <%= tweet.user.username %> </p>
+    <% @tweet_author = tweet.user.id %>
+    <p>Posted By: <a href="/users/<%= @tweet_author %>"> <%= tweet.user.username %> </a></p>
       <% if own_tweet?(tweet) %>
-        <h4><a href="tweets/<%= tweet.id %>/edit"> Edit</a></h4>
-        <%= erb :"tweets/_delete", layout:false, locals: {tweet: tweet} %>
-        <% end %>
+        <h4><a href="tweets/<%= tweet.id %>/edit"> Edit</a>
+        <%= erb :"tweets/_delete", layout: false, locals: {tweet: tweet} %>
+      <% end %>
   <% end %>
 </div>

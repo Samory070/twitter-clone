@@ -1,12 +1,13 @@
-<h1> Current User </h1>
+<h1> <%=@other_user.username %>  </h1>
 
-<!-- Investigate, has to be a better way to put this in scope of the html page -->
-<% current_user %>
-  <% if logged_in? %>
-    <h3> <%= @current_user.username %> </h3><br><br>
-    <h3> <%= @current_user.email %> </h3><br><br>
-    <!-- Could not get created at to work, inquire??? -->
+<div name="container">
+  <% @tweets.each do |tweet| %>
+    <% if other_user_tweet?(@other_user) %>
+      <p><%= tweet.body %> </p>
+    <% end %>
   <% end %>
+</div>
 
+<br><br><br>
 <a href="/">Home</a><br>
 <a href="/sessions/logout"> Log Out</a>
