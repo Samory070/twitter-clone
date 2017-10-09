@@ -15,9 +15,11 @@ post '/users' do
 end
 
 get '/users/:id' do
-  if current_user.id == params[:id]
-  @user = User.find_by(id: params[:id])
-  erb :'/users/show'
+  if current_user.id == params[:id].to_i
+    @user = User.find(params[:id])
+    erb :'/sessions/show'
+  else
+    redirect "/sessions/new"
   end
 end
 
