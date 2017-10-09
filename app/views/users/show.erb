@@ -1,6 +1,4 @@
-<h1> <%=@user.username %>  </h1>
-<h4> Followers: <%= @user.followers.length %><br>
-<h4> Following: <%= @user.followees.length %><br><br>
+<%= erb :"users/_follows", layout: false, locals: {user: @user} %>
 
 <div name="container">
   <% @tweets.each do |tweet| %>
