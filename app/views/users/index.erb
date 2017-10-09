@@ -6,6 +6,9 @@
   <h3>Users:</h3>
   <% User.all.each do |user| %>
     <p><%= user.username %></p>
+    <form action="/followers" method="post">
+      <input type="submit" value="follow">
+    </form>
   <% end%>
 
 </div>
