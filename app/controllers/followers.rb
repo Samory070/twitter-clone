@@ -11,7 +11,7 @@ end
 post '/users/:id/followers/new' do
   @user = User.find_by(id: session[:id])
   @follower = Follow.new(follower_id: params[:id])
-  binding.pry
+  # binding.pry
   @user.followers << @follower
   if @follower.save
     redirect "/users/#{@user.id}"
