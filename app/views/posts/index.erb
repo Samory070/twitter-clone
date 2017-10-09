@@ -2,10 +2,12 @@
 
 <div class="posts">
   <ul>
-    <li>ID_PLACEHOLDER - USERNAME PLACE HOLDER - LINK PlaceHOLder</li>
-    <li>ID_PLACEHOLDER - USERNAME PLACE HOLDER - LINK PlaceHOLder</li>
-    <li>ID_PLACEHOLDER - USERNAME PLACE HOLDER - LINK PlaceHOLder</li>
-    <li> 1 - test - <a href="/posts/1">Show</li>
+    <li> 1 - test - <a href="/posts/1">Show</a></li>
+    <% @posts.each do |post| %>
+      <li><%= "#{post.id} - #{post.user_id} - #{post.tweet}" %> - <a href="/posts/<%= post.id %>">Show</a></li>
+
+    <% end %>
+
   </ul>
 </div>
 
