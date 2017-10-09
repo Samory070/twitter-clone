@@ -1,5 +1,7 @@
 Code Review Questions
 
+*Need to spend some time understanding scope in CRUD and when I need to use my helper methods in order to make sure things are securely in scope
+
 *"/users/show"  maybe a different table name, look into schema when time     <!-- Could not get created at to work, inquire??? -->
 
 *New User route order with /users/:id needing to follow /users/new in order for the later to catch.

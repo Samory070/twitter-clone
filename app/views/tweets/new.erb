@@ -1,0 +1,18 @@
+<h1> New Tweet </h1>
+
+<% if @errors %>
+  <% @errors.each do |error| %>
+    <%= error %>
+  <% end %>
+<% end %>
+
+<form action="/tweets" method="post">
+  <label for="body">What Does the Internet need to know?</label>
+  <input type="text" name="body" placeholder="Tell it here!">
+  <input type="submit" value="Tweet!">
+</form>
+
+<br>
+<br>
+<!-- Reteach oneself how to created HTML footers -->
+<a href="/">Home</a>

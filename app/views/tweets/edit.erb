@@ -1,0 +1,19 @@
+<h1> Edit a Tweet (Just in case your the commander-and-chief and you tweet racist nonsense before your aids can stop you in the wee hours of the morning.)</h1>
+
+<% if @errors %>
+  <% @errors.each do |error| %>
+    <%= error %>
+  <% end %>
+<% end %>
+
+<form action="/tweets/<%=@tweet.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <input type="text" name="post[body]" value="<%= @tweet.body %>">
+ <!-- name needed below? -->
+  <input type="submit" name="" value="Update Tweet!">
+</form>
+
+<br>
+<br>
+<!-- Reteach oneself how to created HTML footers -->
+<a href="/">Home</a>

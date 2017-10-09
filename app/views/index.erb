@@ -7,12 +7,11 @@
   <% if logged_in? %>
     <h3> Current User </h3>
     <%= @current_user.username %> <br><br>
-    <!-- Create a tweet here -->
-<!--     <a href="/users/potlucks/new"> Host a Potluck!</a><br> -->
+    <a href="/tweets/new"> New Tweet</a><br>
     <a href="/sessions/logout"> Log Out</a>
   <% else %>
-    <a href='/sessions/new'> Login </a> <p>
-    <a href='/users/new'> Register!</a>
+    <a href="/sessions/new"> Login </a> <p>
+    <a href="/users/new"> Register!</a>
   <% end %>
 </nav>
 
@@ -20,5 +19,8 @@
   <% @tweets.each do |tweet| %>
     <p><%= tweet.body %> </p>
     <p><%= tweet.user.username %> </p>
+      <% if owns_tweet?(tweet) %>
+        <h4><a href="tweets/<%= post.id %>/edit"> Edit</a> or Delete </h4>
+        <% end %>
   <% end %>
 </div>
