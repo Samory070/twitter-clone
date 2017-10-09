@@ -18,8 +18,8 @@ post '/users' do
 end
 
 get '/users/:id' do
-  @tweets = Tweet.all
   @user = User.find(params[:id])
+  @tweets = Tweet.where(user_id: @user.id)
   redirect '/' unless session[:id] == @user.id
   erb :'/users/show'
 end

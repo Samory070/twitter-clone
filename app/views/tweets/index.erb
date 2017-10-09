@@ -1,8 +1,9 @@
-<h1>Your Tweets:</h1>
+<h1>All Tweets:</h1>
 <%@tweets.each do |tweet| %>
 <ul>
   <li><%=tweet.text%></li>
   <li><%=tweet.created_at%></li>
+  <li>Posted by: <%=@user.username%></li>
 </ul>
 <%end%>
 

@@ -11,6 +11,7 @@ end
 post '/users/:id/followees/new' do
   @user = User.find(session[:id])
   # @followee = Follow.new(params[:follow])
+  # binding.pry
   @followee = @user.followee_follows.new(params[:followee_id])
   # @user.followees << @followee
   if @followee.save

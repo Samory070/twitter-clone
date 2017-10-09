@@ -3,7 +3,7 @@
 <h1>Welcome, <%=@user.first_name%></h1>
 
 <p><a href="/tweets/new">Create a new tweet here</a></p>
-<p><a href="/users">See all users</a></p>
+<p><a href="/users">View all users</a></p>
 
 <h2>My Followers:</h2>
 <%@user.followers.each do |follower| %>
@@ -18,6 +18,9 @@
     <li>Username: <%=followee.username%></li>
   </ul>
 <% end %>
+
+<p>Total number of followers: <%=@user.follower_follows.count%></p>
+<p>Following: <%=@user.followee_follows.count%> people</p>
 
 <h2>All of My Tweets:</h2>
 <p>Total number of tweets: <%=@tweets.count%></p>
