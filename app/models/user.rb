@@ -23,4 +23,5 @@ class User < ApplicationRecord
     return nil unless user = find_by(email: email)
     return user if user.password == plaintext_password
     return nil
+  end
 end
