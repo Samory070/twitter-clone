@@ -6,7 +6,7 @@ end
 get '/users/:id' do
   "display a specific user"
   @user = User.find_by(id: params[:id])
-  redirect '/' unless @user.id == session[:user_id]
+  # redirect '/' unless @user.id == session[:user_id]
   erb :'users/show'
 end
 

@@ -8,16 +8,21 @@ end
 
 
 get '/posts/new' do
-  "return an HTML form for creating a new post"
   # @post = Post.new
   erb :'posts/new'
 end
 
 post '/posts' do
-  # "create a new post"
-  # puts "create a new post"
-  # puts "#{params[:post]}"
-  "creates post action"
+
+  @post = Post.new(body: params[:body])
+  if @post.save
+    puts "Post Saved"
+    redirect "/"
+  else
+    puts "Post NOT saved"
+    puts "#{@errors}"
+    erb :'posts/new'
+  end
 end
 
 get '/posts/:id' do

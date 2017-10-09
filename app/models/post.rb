@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  validates :tweet, :user_id, presence: true
+  validates :body, presence: true
 
-  has_one :user, :through => :tweets
+  belongs_to :user
 end
