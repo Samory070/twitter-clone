@@ -1,0 +1,43 @@
+get '/posts' do
+  # "Shows all posts"
+  @posts = Post.all
+  @posts.map{|tweet| tweet.tweet}.to_s
+end
+
+
+get '/posts/new' do
+  "return an HTML form for creating a new post"
+  # @post = Post.new
+  erb :'posts/new'
+end
+
+post '/posts' do
+  # "create a new post"
+  # puts "create a new post"
+  # puts "#{params[:post]}"
+  @post = Post.new(params[:post])
+
+  if @post.save
+    puts "new post saved"
+      redirect "/posts"
+  else
+    puts "new post not saved"
+    erb :'posts/new'
+  end
+end
+
+get '/posts/:id' do
+  "display a specific post"
+end
+
+get '/posts/:id/edit' do
+  "return an HTML form for editing a post"
+end
+
+put '/posts/:id' do
+  "Update a specific post"
+end
+
+delete '/posts/:id' do
+  "delete a specifc post"
+end

@@ -1,0 +1,12 @@
+<div class="container">
+  <h3><a href="/">Home Page</a></h3>
+  <!-- Refactor href on line 4 -->
+  <h4><a href="/posts/new">Create a new tweet</a></h4>
+  <p>Welcome, <%= @user.first_name %></p>
+  <p>Username: <%= @user.username %></p>
+
+
+  <form action="/sessions/logout" method="post">
+    <input type="submit" value="Log Out">
+  </form>
+</div>
