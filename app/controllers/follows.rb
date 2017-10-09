@@ -1,3 +1,5 @@
+# NOT WORKING YET
+
 get '/followers/new' do
   @followed = Follow.new
   erb :"followers/new"
