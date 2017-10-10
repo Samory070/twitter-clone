@@ -4,7 +4,7 @@
   <li><%=@tweet.created_at%></li>
 </ul>
 <p><a href="/tweets/<%=@tweet.id%>/edit">Edit</a></p>
-<form action="/entries/<%=@tweet.id%>" method="post" id="delete">
+<form action="/tweets/<%=@tweet.id%>" method="post" id="delete">
   <input type="hidden" name="_method" value="delete">
   <input type="submit" value="Delete">
 </form>
