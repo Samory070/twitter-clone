@@ -1,9 +1,9 @@
 <p id="logout"><a href="/logout">Logout</a></p>
-
+<
 <h1>Welcome, <%=@user.first_name%></h1>
 
-<p><a href="/tweets/new">Create a new tweet here</a></p>
-<p><a href="/users">View all users</a></p>
+<p><a href="/tweets/new">Create New Tweet</a></p>
+<p><a href="/users">View All Users</a></p>
 
 <h2>My Followers:</h2>
 <%@user.followers.each do |follower| %>
@@ -11,7 +11,7 @@
     <li>Username: <a href="<%="/users/#{@user.id}"%>"><%=follower.username%></a></li>
   </ul>
   <%end%>
-
+<p>Total number of followers: <%=@user.follower_follows.count%></p>
 
 <h2>Following:</h2>
 <%@user.followees.each do |followee| %>
@@ -19,17 +19,15 @@
     <li>Username: <a href="<%="/users/#{@user.id}"%>"><%=followee.username%></a></li>
   </ul>
 <% end %>
-
-<p>Total number of followers: <%=@user.follower_follows.count%></p>
 <p>Following: <%=@user.followee_follows.count%> people</p>
 
 <h2>All of My Tweets:</h2>
-<p>Total number of tweets: <%=@tweets.count%></p>
   <%@tweets.each do |tweet| %>
     <ul>
       <li><a href="<%="/tweets/#{tweet.id}"%>"><%=tweet.text%></a></li>
       <li>Posted: <%=tweet.created_at%></li>
     </ul>
 <% end %>
+<p>Total number of tweets: <%=@tweets.count%></p>
 
 

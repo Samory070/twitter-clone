@@ -9,8 +9,8 @@ get '/users/:id/followers/new' do
 end
 
 post '/users/:id/followers/new' do
-  @user = User.find_by(id: session[:id])
-  @follower = Follow.new(follower_id: params[:id])
+  @user = User.find_by(session[:id])
+  @follower = User.find(session[:id])
   # binding.pry
   @user.followers << @follower
   if @follower.save
@@ -19,3 +19,4 @@ post '/users/:id/followers/new' do
     erb :'/followers/new'
   end
 end
+
