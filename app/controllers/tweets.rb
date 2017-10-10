@@ -9,7 +9,7 @@ get '/tweets/new' do
 end
 
 post '/tweets' do
-  @tweet = Tweet.new(params[:tweet])
+  @tweet = Tweet.new(text: params[:tweet][:text], user_id: session[:id])
   if @tweet.save
     redirect '/tweets'
   else
