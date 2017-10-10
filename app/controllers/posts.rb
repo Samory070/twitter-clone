@@ -32,12 +32,26 @@ end
 
 get '/posts/:id/edit' do
   "return an HTML form for editing a post"
+  @post = Post.find_by(id: params[:id])
+  # redirect '/posts' unless own_post?(@post)
+  erb :'posts/edit'
 end
 
+# Refactor so that other users can't edit
+# another users post
 put '/posts/:id' do
-  "Update a specific post"
+  @post = Post.find_by(id: params[:id])
+  if @post.save
+    redirect "/posts"
+  else
+    erb :"posts/edit"
+  end
 end
 
+# Refactor so that other users can't delete
+# another users post
 delete '/posts/:id' do
-  "delete a specifc post"
+  @post = Post.find_by(id: params[:id])
+  @post.destroy!
+  redirect "/posts/delete"
 end

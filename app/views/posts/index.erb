@@ -3,7 +3,7 @@
 <div class="posts">
   <ul>
     <% @posts.each do |post| %>
-      <li><%= "#{post.id} - #{post.user_id} - #{post.body}" %> - <a href="/posts/<%= post.id %>">Show</a></li>
+      <li><%= "#{post.id} - #{post.user_id} - #{post.body}" %> - <a href="/posts/<%= post.id %>">Show</a> - <a href="/posts/<%= post.id %>/edit">Edit</a> - <a href="/posts/<%= post.id %>">Delete</a></li>
     <% end %>
   </ul>
 </div>
