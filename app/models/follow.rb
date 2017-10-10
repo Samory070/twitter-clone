@@ -4,5 +4,5 @@ class Follow < ApplicationRecord
   validates :user_id2, presence: true
 
   belongs_to :user
-  has_many :users
+  belongs_to :user
 end

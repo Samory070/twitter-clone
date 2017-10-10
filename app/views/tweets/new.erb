@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<head>
+    <title>Web Page Having A Form</title>
+    <style type="text/css">
+        body {
+            background-image: url("https://image.freepik.com/free-vector/gray-texture-background_23-2147610644.jpg");
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color : #000000;
+            text-align : center;
+            font-family: "SIMPSON";
+        }
+        h3 {
+            color : #000000;
+            text-align : center;
+            font-family: "SIMPSON";
+        }
+
+        .buttonHolder {
+            text-align: center;
+            margin-left: 0cm;
+        }
+        .registration-login-choice
+        {
+            text-align: center;
+        }
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <h3><a href="/">Home</a></h3>
+    <!-- Not correct -->
+    <h3><a href="/">Your Dashboard</a></h3>
+    <h3><a id="create-tweet" href="/tweets/index">Tweet something!</a></h3>
+    <h3><a href="/users/logout">Logout</a></h3>
+
+
+    <h5>Leave a Comment:</h5>
+              <form id="form-comment" role="form">
+                <div class="form-group">
+                  <textarea class="form-control" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-success">Submit</button>
+              </form>
+    <div class="tweets">
+        <ul id="list-of-tweets">
+          <% @tweets.reverse.each_with_index do |tweet, index| %>
+          <li><b> Tweet #<%= index %> </b> | <b> User: </b> <%= tweet.user.username %> | <b> Created at: </b> <%= tweet.created_at %> </b> <br>
+              <%= tweet.content %></li> <br>
+              <br>
+          <% end %>
+        </ul>
+    </div>
+</body>
