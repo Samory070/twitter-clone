@@ -40,20 +40,23 @@
     <h3><a href="/users/logout">Logout</a></h3>
 
 
-    <h5>Leave a Comment:</h5>
-              <form id="form-comment" role="form">
-                <div class="form-group">
-                  <textarea class="form-control" rows="3" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-success">Submit</button>
-              </form>
+    <h4>Tweet something!</h4>
+    <form id="form-tweet" action="/tweets/new" method="post" role="form">
+      <div class="form-group">
+        <textarea name="content" class="form-control" rows="3" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+
     <div class="tweets">
         <ul id="list-of-tweets">
+          <% nb_tweets = @tweets.length %>
           <% @tweets.reverse.each_with_index do |tweet, index| %>
-          <li><b> Tweet #<%= index %> </b> | <b> User: </b> <%= tweet.user.username %> | <b> Created at: </b> <%= tweet.created_at %> </b> <br>
+          <li><b> Tweet #<%= nb_tweets - index %> </b> | <b> User: </b> <%= tweet.user.username %> | <b> Created at: </b> <%= tweet.created_at %> </b> <br>
               <%= tweet.content %></li> <br>
               <br>
           <% end %>
         </ul>
     </div>
+
 </body>
