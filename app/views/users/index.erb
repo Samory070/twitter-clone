@@ -1,5 +1,7 @@
 <h1>All Users:</h1>
+<p><a href="<%="/users/#{@user.id}"%>">Back</a></p>
 <%@users.each do |user|%>
+<div id="user-listing">
   <ul>
     <li>Name: <%=user.first_name%> <%=user.last_name%></li>
     <li>Username: <%=user.username%></li>
@@ -8,8 +10,8 @@
 
     <form action="/users/<%=user.id%>/followees/new" method="post" id="follow-button">
       <input type="hidden" name="_method">
-      <input type="submit" value="Follow">
+      <input type="submit" value="Follow <%=user.username%>">
     </form>
   </ul>
-
+</div>
   <%end%>

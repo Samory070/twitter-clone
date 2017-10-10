@@ -1,5 +1,6 @@
 get '/users' do
   @users = User.all
+  @user = User.find(session[:id])
   erb :'/users/index'
 end
 
