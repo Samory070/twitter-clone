@@ -1,9 +1,5 @@
 class User < ApplicationRecord
-  belongs_to :followers , class_name: "Follower"
-  has_many :followers
-  has_many :followings, class_name: "Follower", foreign_key: "follower_id"
-  has_many :followings, through: :followings, source: :User
-
+  has_many :tweets , foreign_key: :user_id
 
   validates :hashed_password,:email, presence:true
   validates :email, uniqueness:true
