@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+
+  # refactor to add follow model
   validates :first_name, :last_name, :username, :email, :password_hash, presence: true
   validates :username, :email, uniqueness: true
 
