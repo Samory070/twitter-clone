@@ -16,6 +16,21 @@ post '/tweets/new' do
   if @tweet.save
     redirect '/tweets/index'
   else
-    "User not created"
+    "Tweet not created"
+  end
+end
+
+post '/tweets/edit' do
+  @tweet = Tweet.
+  redirect '/tweets/index'
+end
+
+post '/tweets/:id' do
+  @tweet = Tweet.find(params[:id])
+  if @tweet #&& current_user
+    @tweet.destroy
+    redirect '/tweets/index'
+  else
+    "You cannot delete others' tweets"
   end
 end
