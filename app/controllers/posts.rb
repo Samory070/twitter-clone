@@ -35,6 +35,12 @@ get '/posts/:id/edit' do
   erb :'posts/edit'
 end
 
+# Tried to implement the update feature as we 
+# we over in class today.
+# Ran into issues so tried to use pry & use puts statments to debug
+# I think this issue might be caused by some of the logic 
+# in my earlier written code and the structure of the database. 
+
 put '/posts/edit' do
   binding.pry
   puts @post = Post.find(params[:id])
