@@ -21,13 +21,14 @@ post '/tweets/new' do
 end
 
 post '/tweets/edit' do
-  @tweet = Tweet.
-  redirect '/tweets/index'
+  "To be done"
+  #redirect '/tweets/index'
 end
 
 post '/tweets/:id' do
   @tweet = Tweet.find(params[:id])
-  if @tweet #&& current_user
+  @user = User.find_by(id: session[:id])
+  if (@tweet && @user == current_user)
     @tweet.destroy
     redirect '/tweets/index'
   else

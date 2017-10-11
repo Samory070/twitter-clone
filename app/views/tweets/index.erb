@@ -27,6 +27,11 @@
             text-align: center;
         }
 
+        .edit-delete-button
+        {
+            display: inline-block;
+        }
+
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
@@ -46,10 +51,15 @@
           <% @tweets.reverse.each_with_index do |tweet, index| %>
           <li><b> Tweet #<%= nb_tweets - index %> </b> | <b> User: </b> <%= tweet.user.username %> | <b> Created at: </b> <%= tweet.created_at %> </b> <br>
               <%= tweet.content %></li> <br>
-              <form action = "/tweets/<%= tweet.id %>" method = "post">
+              <form class="edit-delete-button" action = "/tweets/<%= tweet.id %>" method = "post">
                 <input type="hidden" name="_method" value="post">
                 <input type="submit" class="button" value="Delete">
               </form>
+              <form class="edit-delete-button" action = "/tweets/edit" method = "post">
+                <input type="hidden" name="_method" value="post">
+                <input type="submit" class="button" value="Edit">
+              </form>
+              <br>
               <br>
           <% end %>
         </ul>
