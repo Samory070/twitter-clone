@@ -9,3 +9,8 @@ end
 def owns_tweet?(tweet)
   logged_in? && tweet.user == current_user
 end
+
+# def user_tweet?
+#   session[user_id] == @user.id && logged_in?
+# end
+

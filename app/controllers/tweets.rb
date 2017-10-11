@@ -10,10 +10,7 @@ end
 
 post '/tweets' do
   @tweet = Tweet.new(params[:tweet])
-  @user = User.find_by(id: session[:user_id])
-
-  @tweet.user = @user
-
+  @tweet.user = current_user
   if @tweet.save
     redirect '/tweets'
   else
@@ -28,11 +25,13 @@ end
 
  get '/tweets/:id/edit' do
    @tweet = Tweet.find(params[:id])
+   redirect '/' unless @tweet.user == current_user
    erb :'tweets/edit'
  end
 
  patch '/tweets/:id' do
    @tweet = Tweet.find(params[:id])
+   @tweet.user = current_user
    @tweet.update(params[:tweet])
    #@tweet.assign_attributes(params[:tweet])
    #redirect '/tweets/#{@tweet.id}'
