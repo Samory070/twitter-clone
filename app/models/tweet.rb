@@ -1,4 +1,4 @@
 class Tweet < ApplicationRecord
-  belongs_to :User
-  validates :hashed_password,:email, presence:true
+  belongs_to :user
+  validates :message, :user_id
 end
