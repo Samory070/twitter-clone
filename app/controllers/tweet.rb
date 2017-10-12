@@ -12,7 +12,7 @@ end
 post '/tweets/new' do
   puts params
   # create new tweet by protecting the session
-  @tweet = Tweet.create!(:content => params[:content], :user_id => session[:user_id])
+  @tweet = Tweet.new(content: params[:content], user_id: session[:user_id])
   if @tweet.save
     redirect '/tweets/index'
   else
@@ -20,18 +20,21 @@ post '/tweets/new' do
   end
 end
 
-post '/tweets/edit' do
+put '/tweets/edit' do
   "To be done"
   #redirect '/tweets/index'
 end
 
-post '/tweets/:id' do
-  @tweet = Tweet.find(params[:id])
-  @user = User.find_by(id: session[:id])
-  if (@tweet && @user == current_user)
+delete '/tweets/:id' do
+  @tweet = Tweet.find_by(id: params[:id])
+  @user = User.find_by(id: session[:user_id])
+  #protect the tweet
+  puts @tweet.user_id.to_i
+  puts session[:user_id].to_i
+  if (@tweet.user_id.to_i == session[:user_id].to_i)
     @tweet.destroy
     redirect '/tweets/index'
   else
-    "You cannot delete others' tweets"
+    "You cannot delete others people's tweets"
   end
 end
