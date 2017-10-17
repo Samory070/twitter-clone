@@ -4,7 +4,11 @@ get '/' do
 end
 
 get '/tweets/new' do
- erb :'tweets/new'
+  if request.xhr?
+    erb :'tweets/_new_tweet_form', layout: false
+  else
+    erb :'tweets/new'
+  end
 end
 
 post '/tweets' do
@@ -21,7 +25,7 @@ get '/tweets/:id' do
   if request.xhr?
     erb :'/tweets/_details', layout: false
   else
-  erb :'tweets/show'
+    erb :'tweets/show'
   end
 end
 

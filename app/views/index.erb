@@ -1,11 +1,12 @@
   <h1>Welcome to Twitter!</h1>
-<div class="newTweetFormContainer">
+<div id="newTweetFormContainer">
+
 </div>
 
 <div>
     <ul>
   <% @tweets.each do |tweet| %>
-    <%=  %>
+    <%= erb :'tweets/_tweet', locals: {tweet_object: tweet} %>
   <% end %>
     </ul>
 </div>

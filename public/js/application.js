@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $('.tweet-link').on('click', function(e) {
+  $('ul').on('click', '.tweet-link', function(e) {
     e.preventDefault();
     var $aTag = $(this)
 
@@ -14,15 +14,17 @@ $(document).ready(function() {
 
   })
 
-  $('#newTweetForm').on('submit', function(e) {
+  $('#newTweetFormContainer').on('submit', '#newTweetForm' function(e) {
     e.preventDefault();
 
     $.ajax({
-      url: $(this).attr('href'),
-      method: 'get'
+      url: $(this).attr('action'),
+      method: $(this).attr('method'),
+      data: $(this).serialize()
     })
-    .done({
-      $(#new)
+    .done(function(res){
+      $('ul').prepend(res)
     })
   })
+
 });
